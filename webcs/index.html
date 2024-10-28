@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie TV</title>
+<link rel="stylesheet" href="styles.css">
+<script>
+
+function showSection(sectionId) {
+// Hide all sections
+document.getElementById('home').style.display = 'none';
+document.getElementById('tv-shows-section').style.display = 'none';
+document.getElementById('movies-section').style.display = 'none';
+document.getElementById('News & Popular').style.display = 'none';
+document.getElementById('My List').style.display = 'none';
+
+// Show the selected section
+document.getElementById(sectionId).style.display = 'block';
+}
+
+
+</script>
+</head>
+<body>
+<!-- Simple Gmail Login Modal -->
+<div id="gmail-login-modal" class="modal">
+<div class="modal-content">
+<h2>Login with Gmail</h2>
+<form id="login-form" onsubmit="handleLoginSubmit(event)">
+<input type="email" placeholder="Your Gmail address" required>
+<button type="submit">Login</button>
+</form>
+</div>
+</div>
+<header>
+
+<div class="header-left">
+<h1>Movie TV</h1>
+<nav>
+<a href="#" onclick="showSection('home')">Home</a>
+<a href="#" onclick="showSection('tv-shows-section')">TV Shows</a>
+<a href="#" onclick="showSection('movies-section')">Movies</a>
+<a href="#" onclick="showSection('News & Popular')">News & Popular</a>
+<a href="#" onclick="showSection('My List')">My List</a>
+</nav>
+</div>
+<div class="header-right">
+<input type="text" placeholder="search">
+</div>
+</header>
+<div id="search-section">
+<input type="text" id="search-input" placeholder="Search movies or shows..." />
+<button id="search-button" onclick="handleSearch()">Search</button>
+</div>
+<!-- Home Section -->
+<div id="home" style="display: block;">
+<section class="category">
+<h2>My List</h2>
+<div class="movie-grid">
+<a href="details.html"> <!-- Make the image clickable -->
+<img src="https://i.pinimg.com/236x/28/ca/76/28ca763b934894c7b78dacdd38a6d2ed.jpg" alt="q">
+</a>
+<img src="https://i.pinimg.com/enabled_lo/236x/2b/14/da/2b14da6668dcc8e6456ab0ce9bcf1a5d.jpg" alt="w">
+<img src="https://i.pinimg.com/474x/e4/ea/5d/e4ea5dc8634d3e56db4c98f58ae51420.jpg" alt="Tangled">
+<img src="https://i.pinimg.com/enabled_lo/236x/f0/eb/d6/f0ebd6d772eaa8221f7b9ab82f4e41a5.jpg" alt="e">
+<img src="https://i.pinimg.com/enabled_lo/236x/24/05/f5/2405f5d1220d45fef53df0bfe804e104.jpg" alt="r">
+<img src="https://i.pinimg.com/enabled_lo/236x/78/f0/2e/78f02e6a0ae0e2e86316224de52cd8df.jpg" alt="s">
+<img src="https://i.pinimg.com/enabled_lo/236x/c4/eb/ba/c4ebba51f9884760922dcfd095bada40.jpg" alt="t">
+</div>
+</section>
+<section class="category">
+<h2>Popular on Movie TV</h2>
+<div class="movie-grid">
+<img src="https://i.pinimg.com/enabled_lo/236x/e0/cc/67/e0cc670c8b292b6eb77d406388d50835.jpg" alt="a">
+<img src="https://i.pinimg.com/enabled_lo/236x/6d/28/e1/6d28e13eecb971cff8f50e32713ecd36.jpg" alt="b">
+<img src="https://i.pinimg.com/enabled_lo/236x/dc/26/0b/dc260b3c2dc0bbb4a2b7f99f12355394.jpg" alt="c">
+<img src="https://i.pinimg.com/enabled_lo/236x/06/8e/47/068e4700ce144ddfb8b5863b7b3eafd7.jpg" alt="d">
+<img src="https://i.pinimg.com/enabled_lo/236x/2b/1d/b6/2b1db6333afded33090a9d7ee4e1d7ce.jpg" alt="e">
+<img src="https://i.pinimg.com/enabled_lo/236x/05/da/c6/05dac6f36c7b9451403e033fbbecc590.jpg" alt="f">
+<img src="https://i.pinimg.com/enabled_lo/236x/ee/55/75/ee55756b5dc1b7df15af705ed4ed2a49.jpg" alt="g">
+</div>
+</section>
+<section class="category">
+<h2>Trending Now</h2>
+<div class="movie-grid">
+<img src="https://i.pinimg.com/enabled_lo/236x/02/02/3e/02023ee1ee6d1a463eff69caf78e6322.jpg" alt="WandaVision">
+<img src="https://i.pinimg.com/enabled_lo/236x/2c/d8/d8/2cd8d8abf90314dc4e6035d60b9fda5a.jpg" alt="Spiderman">
+<img src="https://i.pinimg.com/enabled_lo/236x/4e/18/34/4e183454cfd1514edca198df0f244855.jpg" alt="Bloodshot">
+<img src="https://i.pinimg.com/enabled_lo/236x/46/4e/2a/464e2a939dd1e56d509e80d0a3ed7d95.jpg" alt="Guardians of the Galaxy">
+<img src="https://i.pinimg.com/474x/a9/7a/be/a97abe78ee8671866ed8af9abab07a4c.jpg" alt="Moana">
+<img src="https://i.pinimg.com/enabled_lo/236x/3f/be/ba/3fbebabfb00e74ff6be92486d004a79d.jpg" alt="Pixels">
+<img src="https://i.pinimg.com/enabled_lo/236x/eb/84/c9/eb84c9818e3fd1badf755646c402a679.jpg" alt="Love & Basketball">
+</div>
+</section>
+</div>
+
+<!-- TV Shows Section -->
+<section class="category" id="tv-shows-section" style="display: none;">
+<h2>TV Shows</h2>
+<div class="movie-grid">
+<img src="https://i.pinimg.com/enabled_lo/236x/d1/44/9c/d1449cf0ef6efa6386bd8df6b99a3edd.jpg" alt="We Bare Bears">
+<img src="https://i.pinimg.com/enabled_lo/474x/f3/61/fb/f361fb6feac132710e5a20a90bd7252f.jpg" alt="Adventure Time">
+<img src="https://i.pinimg.com/enabled_lo/236x/0b/3c/16/0b3c16298afba9887b1a8f26ec7d4dcd.jpg" alt="SpongeBob">
+<img src="https://i.pinimg.com/enabled_lo/236x/eb/ad/64/ebad6447d9ab0061191bc579de35d40b.jpg" alt="Tom & Jerry">
+<img src="https://i.pinimg.com/enabled_lo/236x/ed/f0/87/edf0876b4e396d628774d23faec5833f.jpg" alt="Hunter x Hunter">
+<img src="https://i.pinimg.com/enabled_lo/236x/16/ae/9e/16ae9ef1f8e8e6405d9b9508d1e3232d.jpg" alt="Peaky Blinders">
+<img src="https://i.pinimg.com/236x/1a/41/93/1a4193fa74d30db3e43f3dd093eba691.jpg" alt="The 100">
+<img src="https://i.pinimg.com/enabled_lo/236x/59/10/23/59102333312c8ceae749027c5193539d.jpg" alt="Naruto">
+<img src="https://i.pinimg.com/enabled_lo/236x/0b/3c/16/0b3c16298afba9887b1a8f26ec7d4dcd.jpg" alt="The Boys">
+<img src="https://i.pinimg.com/474x/f1/9b/5a/f19b5a471077e1287184840b90370b2a.jpg" alt="Wanted">
+<img src="https://i.pinimg.com/enabled_lo/236x/11/89/ca/1189ca36d628e06bda567f17298adfa9.jpg" alt="Breaking Bad">
+<img src="https://i.pinimg.com/236x/c3/36/b3/c336b3af86fcf73faf458bec3596e68e.jpg" alt="The Walking Dead">
+</div>
+</section>
+
+<!-- Movies Section -->
+<section class="category" id="movies-section" style="display: none;">
+<h2>Movies</h2>
+<div class="movie-grid">
+<img src="https://i.pinimg.com/236x/16/ae/9e/16ae9ef1f8e8e6405d9b9508d1e3232d.jpg" alt="Movie 1">
+<img src="https://i.pinimg.com/236x/f7/b8/b3/f7b8b335229262183ee86adf3abc0592.jpg" alt="Movie 2">
+<img src="https://i.pinimg.com/236x/4a/c1/60/4ac1603157230f9a3622e388bf997b34.jpg" alt="Movie 3">
+<img src="https://i.pinimg.com/236x/c3/36/b3/c336b3af86fcf73faf458bec3596e68e.jpg" alt="Movie 4">
+<img src="https://i.pinimg.com/236x/a6/cc/24/a6cc24918e5b8cfda24911d4624c5d96.jpg" alt="Movie 5">
+<img src="https://i.pinimg.com/236x/22/4a/60/224a60f9f9ca180a1d29a3e4e1abbd60.jpg" alt="Movie 6">
+<img src="https://i.pinimg.com/236x/7d/91/b0/7d91b0c0901df36010ed70347df4a5a2.jpg" alt="Movie 7">
+<img src="https://i.pinimg.com/236x/23/75/4b/23754b0b1fc5d35c1ee3159ae7cf6acc.jpg" alt="Movie 8">
+<img src="https://i.pinimg.com/236x/70/1e/77/701e7793c628a2b258725ad50eace6c1.jpg" alt="Movie 9">
+<img src="https://i.pinimg.com/236x/cf/c1/09/cfc109de26321ca02ca4e5316b83c4f3.jpg" alt="Movie 10">
+<img src="https://i.pinimg.com/236x/fe/10/c3/fe10c35599ed22c5fd821c16860d1cf8.jpg" alt="Movie 11">
+<img src="https://i.pinimg.com/236x/4a/c1/60/4ac1603157230f9a3622e388bf997b34.jpg" alt="Movie 12">
+</div>
+</section>
+
+<section class="category" id="News & Popular" style="display: none;">
+<h2>News & Popular</h2>
+<div class="movie-grid">
+<img src="https://i.pinimg.com/236x/9e/82/61/9e8261cc1c37e5a1a336a674132f39a8.jpg" alt="Movie 13">
+<img src="https://i.pinimg.com/236x/ea/ab/0e/eaab0e42636132dffde9805136165658.jpg" alt="Movie 14">
+<img src="https://i.pinimg.com/236x/79/77/15/797715fd397d7ac8813872c373b76093.jpg" alt="Movie 15">
+<img src="https://i.pinimg.com/236x/e5/81/10/e581109682725ebd6ca4b4c47900bb9e.jpg" alt="Movie 16">
+<img src="https://i.pinimg.com/236x/af/02/f4/af02f4d5531b9f847ba2a81136f795b4.jpg" alt="Movie 17">
+<img src="https://i.pinimg.com/236x/47/10/57/471057af605a47a4b9f77ab3b51bcc4f.jpg" alt="Movie 18">
+<img src="https://i.pinimg.com/236x/e4/de/f4/e4def4d104a03a27ab9e38d3e38190b7.jpg" alt="Movie 19">
+<img src="https://i.pinimg.com/474x/af/39/ed/af39eda15ff9285bd39566551f941f0a.jpg" alt="Movie 20">
+<img src="https://i.pinimg.com/236x/3d/96/68/3d9668c7a20e11b484a58248f9cba67f.jpg" alt="Movie 21">
+<img src="https://i.pinimg.com/236x/c5/0c/47/c50c47581c7fd4f9bb8db749433207b3.jpg" alt="Movie 22">
+<img src="https://i.pinimg.com/236x/8b/53/a6/8b53a62cb78bb0be0a25b71774ecd57e.jpg" alt="Movie 23">
+<img src="https://i.pinimg.com/236x/8d/67/ba/8d67ba6b0ea4245379504a517e9a04a2.jpg" alt="Movie 24">
+</div>
+</section>
+
+<section class="category" id="My List" style="display: none;">
+<h2>My List</h2>
+<div class="movie-grid">
+<img src="https://i.pinimg.com/236x/2b/1d/b6/2b1db6333afded33090a9d7ee4e1d7ce.jpg" alt="Movie 25">
+<img src="https://i.pinimg.com/236x/18/d7/4e/18d74ef46e722828f75cca91b009f4a5.jpg" alt="Movie 26">
+<img src="https://i.pinimg.com/236x/23/ff/07/23ff07b3be01046c20fdced300040d9b.jpg" alt="Movie 27">
+<img src="https://i.pinimg.com/236x/0d/5f/16/0d5f16e60422bdc57c0451d9a586e302.jpg" alt="Movie 28">
+<img src="https://i.pinimg.com/474x/e0/da/a5/e0daa5b51996482026e1c04b2bb27189.jpg" alt="Movie 29">
+<img src="https://i.pinimg.com/236x/ae/be/de/aebedea565116005359ffa4b29344622.jpg" alt="Movie 30">
+<img src="https://i.pinimg.com/236x/1e/ca/83/1eca83b3c1b8142df84e819a7ed2249b.jpg" alt="Movie 31">
+<img src="https://i.pinimg.com/236x/3f/be/ba/3fbebabfb00e74ff6be92486d004a79d.jpg" alt="Movie 32">
+<img src="https://i.pinimg.com/236x/aa/39/57/aa39574b40081259b8b674dcc78c86d3.jpg" alt="Movie 33">
+<img src="https://i.pinimg.com/236x/6d/71/e7/6d71e72ccb7199f965f6b8106267a8e8.jpg" alt="Movie 34">
+<img src="https://i.pinimg.com/236x/9d/88/66/9d88663138930bb540daabff827c87ec.jpg" alt="Movie 35">
+<img src="https://i.pinimg.com/236x/cc/35/29/cc3529652caca7c619a865b07af08620.jpg" alt="Movie 36">
+</div>
+</section>
+<script>function handleSearch() {
+const searchInput = document.getElementById('search-input').value.trim(); // Get the search input value
+
+if (searchInput) {
+// Simulate search functionality (you can replace this with actual search logic)
+console.log('Searching for:', searchInput);
+alert('You searched for: ' + searchInput); // Alert with search input
+
+// Here, you can add logic to filter or display search results.
+// For example, if you have an array of movies, you could filter it based on the search input.
+} else {
+alert('Please enter a search term.'); // Alert for empty input
+}
+}
+</script>
+<script>
+function handleLoginSubmit(event) {
+event.preventDefault(); // Prevent the form from submitting normally
+
+const emailInput = event.target[0]; // Get the email input field
+const email = emailInput.value; // Get the email value
+
+// Basic email validation
+if (validateEmail(email)) {
+console.log('User logged in:', email); // Simulate login by logging to console
+document.getElementById('gmail-login-modal').style.display = 'none'; // Hide modal
+localStorage.setItem('userEmail', email); // Store email in localStorage
+} else {
+alert('Please enter a valid email address.'); // Alert for invalid email
+}
+}
+
+// Basic email validation function
+function validateEmail(email) {
+const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple regex for email validation
+return re.test(String(email).toLowerCase());
+}
+
+// Hide modal if user is already logged in
+window.onload = function () {
+if (localStorage.getItem('userEmail')) {
+document.getElementById('gmail-login-modal').style.display = 'none';
+}
+};
+</script>
+</body>
+</html>
